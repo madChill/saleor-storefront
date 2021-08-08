@@ -30,9 +30,8 @@ const ProductVariantPicker: React.FC<IProductVariantPickerProps> = ({
   selectSidebar = false,
   selectSidebarTarget,
 }) => {
-  const productVariantsAttributes = useProductVariantsAttributes(
-    productVariants
-  );
+  const productVariantsAttributes =
+    useProductVariantsAttributes(productVariants);
   const [
     productVariantsAttributesSelectedValues,
     selectProductVariantsAttributesValue,

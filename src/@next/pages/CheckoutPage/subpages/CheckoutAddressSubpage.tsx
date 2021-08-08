@@ -80,9 +80,8 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
     }
   });
 
-  const [billingAsShippingState, setBillingAsShippingState] = useState(
-    billingAsShipping
-  );
+  const [billingAsShippingState, setBillingAsShippingState] =
+    useState(billingAsShipping);
   useEffect(() => {
     setBillingAsShippingState(billingAsShipping);
   }, [billingAsShipping]);

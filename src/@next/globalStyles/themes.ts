@@ -193,4 +193,4 @@ export const defaultTheme = {
 };
 
 export type DefaultTheme = typeof defaultTheme;
-export const styled = baseStyled as ThemedStyledInterface<DefaultTheme>;
+export const styled = baseStyled as ThemedStyledInterface<DefaultTheme> | any;

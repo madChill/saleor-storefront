@@ -37,8 +37,9 @@ const BraintreePaymentGateway: React.FC<IProps> = ({
 }: IProps) => {
   const [submitErrors, setSubmitErrors] = useState<IFormError[]>([]);
 
-  const clientToken = config.find(({ field }) => field === "client_token")
-    ?.value;
+  const clientToken = config.find(
+    ({ field }) => field === "client_token"
+  )?.value;
 
   const [cardErrors, setCardErrors] = React.useState<ErrorData>(
     INITIAL_CARD_ERROR_STATE

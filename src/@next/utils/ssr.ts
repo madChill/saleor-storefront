@@ -74,7 +74,7 @@ export type FeaturedProducts = {
   products: FeaturedProductsQuery_collection_products_edges_node[];
 } & Partial<Pick<FeaturedProductsQuery_collection, "name" | "backgroundImage">>;
 
-export const getFeaturedProducts = async (): Promise<FeaturedProducts> => {
+export async function getFeaturedProducts(): Promise<FeaturedProducts> {
   const { apolloClient } = await getSaleorApi();
   const { data } = await apolloClient.query<
     FeaturedProductsQuery,

@@ -17,9 +17,9 @@ import { NotificationTemplate } from "@components/atoms";
 import { ServiceWorkerProvider } from "@components/containers";
 import { defaultTheme, GlobalStyle } from "@styles";
 import { NextQueryParamProvider } from "@temp/components";
-import { getSaleorApi, getShopConfig, ShopConfig } from "@utils/ssr";
+import { getSaleorApi, ShopConfig } from "@utils/ssr";
 
-import { version } from "../../package.json";
+// import { version } from "../../package.json";
 import { App as StorefrontApp } from "../app";
 import {
   loadMessagesJson,
@@ -41,15 +41,15 @@ declare global {
     __APOLLO_CLIENT__: any;
   }
 }
-const attachClient = async () => {
-  const { apolloClient } = await getSaleorApi();
-  window.__APOLLO_CLIENT__ = apolloClient;
-};
+// const attachClient = async () => {
+//   const { apolloClient } = await getSaleorApi();
+//   window.__APOLLO_CLIENT__ = apolloClient;
+// };
 
-if (!ssrMode) {
-  window.version = version;
-  if (process.env.NEXT_PUBLIC_ENABLE_APOLLO_DEVTOOLS === "true") attachClient();
-}
+// if (!ssrMode) {
+//   window.version = version;
+//   if (process.env.NEXT_PUBLIC_ENABLE_APOLLO_DEVTOOLS === "true") attachClient();
+// }
 
 if (process.env.GTM_ID) {
   TagManager.initialize({ gtmId: process.env.GTM_ID });
@@ -123,9 +123,9 @@ App.getInitialProps = async (appContext: NextAppContext) => {
   let messages: LocaleMessages;
 
   if (ssrMode) {
-    if (!shopConfig) {
-      shopConfig = await getShopConfig();
-    }
+    // if (!shopConfig) {
+    //   shopConfig = await getShopConfig();
+    // }
 
     messages = await loadMessagesJson(locale as Locale);
   }

@@ -6,17 +6,16 @@ import { TextField } from "@components/molecules";
 import * as S from "./styles";
 import { CardErrors, PropsWithFormik } from "./types";
 
-const getInputProps = (
-  disabled: boolean,
-  handleChange: (e: React.ChangeEvent) => void
-) => (label: string, errors: CardErrors, value: string) => ({
-  customInput: TextField,
-  disabled,
-  errors: errors.filter(Boolean),
-  label,
-  onChange: handleChange,
-  value,
-});
+const getInputProps =
+  (disabled: boolean, handleChange: (e: React.ChangeEvent) => void) =>
+  (label: string, errors: CardErrors, value: string) => ({
+    customInput: TextField,
+    disabled,
+    errors: errors.filter(Boolean),
+    label,
+    onChange: handleChange,
+    value,
+  });
 
 export const CreditCardFormContent: React.FC<PropsWithFormik> = ({
   formRef,

@@ -15,8 +15,7 @@ export const defaultContext: ShopConfig["shopConfig"] = {
   displayGrossPrices: true,
 };
 
-export const ShopContext = createContext<ShopConfig["shopConfig"]>(
-  defaultContext
-);
+export const ShopContext =
+  createContext<ShopConfig["shopConfig"]>(defaultContext);
 
 ShopContext.displayName = "ShopContext";

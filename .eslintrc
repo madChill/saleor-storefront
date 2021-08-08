@@ -15,7 +15,8 @@
     "import",
     "react",
     "prettier",
-    "simple-import-sort"
+    "simple-import-sort",
+    "only-warn"
   ],
   "rules": {
     "@typescript-eslint/camelcase": "off",

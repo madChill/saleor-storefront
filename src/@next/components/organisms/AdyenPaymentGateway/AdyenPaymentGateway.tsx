@@ -92,8 +92,9 @@ const AdyenPaymentGateway: React.FC<IProps> = ({
 }: IProps) => {
   const intl = useIntl();
 
-  const adyenClientKey = config?.find(({ field }) => field === "client_key")
-    ?.value;
+  const adyenClientKey = config?.find(
+    ({ field }) => field === "client_key"
+  )?.value;
   const adyenConfig = config?.find(({ field }) => field === "config")?.value;
   const parsedAdyenConfig = adyenConfig && JSON.parse(adyenConfig);
 

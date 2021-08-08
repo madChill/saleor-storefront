@@ -25,11 +25,8 @@ const CheckoutShippingSubpageWithRef: RefForwardingComponent<
 
   const [errors, setErrors] = useState<IFormError[]>([]);
 
-  const {
-    checkout,
-    availableShippingMethods,
-    setShippingMethod,
-  } = useCheckout();
+  const { checkout, availableShippingMethods, setShippingMethod } =
+    useCheckout();
 
   const shippingMethods = availableShippingMethods || [];
 

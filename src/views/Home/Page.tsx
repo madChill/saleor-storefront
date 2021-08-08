@@ -98,7 +98,8 @@ const Page: React.FC<{
                         className={classNames(
                           "home-page__categories__list__image",
                           {
-                            "home-page__categories__list__image--no-photo": !category.backgroundImage,
+                            "home-page__categories__list__image--no-photo":
+                              !category.backgroundImage,
                           }
                         )}
                         style={{

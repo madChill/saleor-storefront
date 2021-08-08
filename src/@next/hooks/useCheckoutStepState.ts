@@ -19,9 +19,8 @@ export const useCheckoutStepState = (
   payment?: IPayment,
   totalPrice?: ITotalPrice
 ): StepState => {
-  const isShippingRequiredForProducts = checkIfShippingRequiredForProducts(
-    items
-  );
+  const isShippingRequiredForProducts =
+    checkIfShippingRequiredForProducts(items);
   const isCheckoutPriceEqualPaymentPrice =
     payment?.total &&
     totalPrice?.gross &&

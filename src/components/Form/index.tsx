@@ -25,9 +25,9 @@ interface FormState<Values> {
   errors: FormError[];
 }
 
-function groupErrorsByFields(
-  errors: FormError[]
-): { [key: string]: FormError[] } {
+function groupErrorsByFields(errors: FormError[]): {
+  [key: string]: FormError[];
+} {
   return errors.reduce((o, error) => {
     const key = error.field || NON_FIELD_ERROR;
     (o[key] = o[key] || []).push(error);

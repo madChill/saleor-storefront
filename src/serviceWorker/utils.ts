@@ -58,14 +58,13 @@ export const getRequestedPageFromURL = (url: string): string | undefined => {
   });
 };
 
-export const deleteEntriesForCache = (CACHE_NAME: string) => async (): Promise<
-  void
-> => {
-  const cache = await self.caches.open(CACHE_NAME);
-  const cachedRequests = await cache.keys();
+export const deleteEntriesForCache =
+  (CACHE_NAME: string) => async (): Promise<void> => {
+    const cache = await self.caches.open(CACHE_NAME);
+    const cachedRequests = await cache.keys();
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const entry of cachedRequests) {
-    await cache.delete(entry);
-  }
-};
+    // eslint-disable-next-line no-restricted-syntax
+    for (const entry of cachedRequests) {
+      await cache.delete(entry);
+    }
+  };

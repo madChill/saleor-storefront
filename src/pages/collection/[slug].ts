@@ -15,22 +15,21 @@ import {
 
 export default CollectionView;
 
-export const getStaticPaths: GetStaticPaths<
-  CollectionViewProps["params"]
-> = async () => {
-  const { api } = await getSaleorApi();
-  const { data } = await exhaustList(
-    api.collections.getList({
-      first: staticPathsFetchBatch,
-    })
-  );
+export const getStaticPaths: GetStaticPaths<CollectionViewProps["params"]> =
+  async () => {
+    const { api } = await getSaleorApi();
+    const { data } = await exhaustList(
+      api.collections.getList({
+        first: staticPathsFetchBatch,
+      })
+    );
 
-  const paths = data.map(({ slug }) => ({
-    params: { slug },
-  }));
+    const paths = data.map(({ slug }) => ({
+      params: { slug },
+    }));
 
-  return { paths, fallback: staticPathsFallback };
-};
+    return { paths, fallback: staticPathsFallback };
+  };
 
 export const getStaticProps: GetStaticProps<
   CollectionViewProps,

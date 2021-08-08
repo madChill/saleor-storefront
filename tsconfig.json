@@ -6,7 +6,7 @@
     "jsx": "preserve",
     "lib": ["es2017", "dom", "esnext", "webworker"],
     "sourceMap": true,
-    "target": "es6",
+    "target": "es5",
     "noUnusedLocals": true,
     "paths": {
       "@components/*": ["./src/@next/components/*"],
@@ -41,6 +41,6 @@
     "moduleResolution": "node",
     "isolatedModules": true
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "**/test.ts", "**/test.tsx"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

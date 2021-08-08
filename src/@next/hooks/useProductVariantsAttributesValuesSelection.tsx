@@ -20,7 +20,8 @@ export const useProductVariantsAttributesValuesSelection = (
   ] = useState<IProductVariantsAttributesSelectedValues>({});
 
   useEffect(() => {
-    const variableAttributesSelectedValue: IProductVariantsAttributesSelectedValues = {};
+    const variableAttributesSelectedValue: IProductVariantsAttributesSelectedValues =
+      {};
     Object.keys(productVariantsAttributes).forEach(
       productVariantsAttributeId => {
         variableAttributesSelectedValue[productVariantsAttributeId] = null;
@@ -34,7 +35,8 @@ export const useProductVariantsAttributesValuesSelection = (
   ) => {
     setProductVariantsAttributesSelectedValues(
       prevVariantsAttributesSelectedValue => {
-        const newVariantsAttributesSelectedValue: IProductVariantsAttributesSelectedValues = {};
+        const newVariantsAttributesSelectedValue: IProductVariantsAttributesSelectedValues =
+          {};
 
         Object.keys(productVariantsAttributes).forEach(
           productVariantsAttributeId => {
@@ -51,9 +53,8 @@ export const useProductVariantsAttributesValuesSelection = (
                       value.value === selectedProductVariantsAttributeValue
                   ) || null;
               }
-              newVariantsAttributesSelectedValue[
-                productVariantsAttributeId
-              ] = selectedValue;
+              newVariantsAttributesSelectedValue[productVariantsAttributeId] =
+                selectedValue;
             } else {
               newVariantsAttributesSelectedValue[productVariantsAttributeId] =
                 prevVariantsAttributesSelectedValue[productVariantsAttributeId];

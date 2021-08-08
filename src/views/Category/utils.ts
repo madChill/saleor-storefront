@@ -13,35 +13,37 @@ export interface AttributeList {
   [attributeSlug: string]: string[];
 }
 
-export const filtersChangeHandler = (
-  filters: IFilters,
-  attributeFilters: UknownObject<string[]>,
-  setAttributeFilters: (newValue: UknownObject<string[]>) => void
-) => (name: string, value: string) => {
-  if (attributeFilters && attributeFilters.hasOwnProperty(name)) {
-    if (attributeFilters[name].includes(value)) {
-      if (filters.attributes[name].length === 1) {
-        const att = { ...attributeFilters };
-        delete att[name];
-        setAttributeFilters({
-          ...att,
-        });
+export const filtersChangeHandler =
+  (
+    filters: IFilters,
+    attributeFilters: UknownObject<string[]>,
+    setAttributeFilters: (newValue: UknownObject<string[]>) => void
+  ) =>
+  (name: string, value: string) => {
+    if (attributeFilters && attributeFilters.hasOwnProperty(name)) {
+      if (attributeFilters[name].includes(value)) {
+        if (filters.attributes[name].length === 1) {
+          const att = { ...attributeFilters };
+          delete att[name];
+          setAttributeFilters({
+            ...att,
+          });
+        } else {
+          setAttributeFilters({
+            ...attributeFilters,
+            [name]: attributeFilters[name].filter(item => item !== value),
+          });
+        }
       } else {
         setAttributeFilters({
           ...attributeFilters,
-          [name]: attributeFilters[name].filter(item => item !== value),
+          [name]: [...attributeFilters[name], value],
         });
       }
     } else {
-      setAttributeFilters({
-        ...attributeFilters,
-        [name]: [...attributeFilters[name], value],
-      });
+      setAttributeFilters({ ...attributeFilters, [name]: [value] });
     }
-  } else {
-    setAttributeFilters({ ...attributeFilters, [name]: [value] });
-  }
-};
+  };
 
 export const getActiveFilterAttributes = (
   filterAttributes: AttributeList | undefined,

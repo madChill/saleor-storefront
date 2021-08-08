@@ -15,22 +15,21 @@ import {
 
 export default CategoryView;
 
-export const getStaticPaths: GetStaticPaths<
-  CategoryViewProps["params"]
-> = async () => {
-  const { api } = await getSaleorApi();
-  const { data } = await exhaustList(
-    api.categories.getList({
-      first: staticPathsFetchBatch,
-    })
-  );
+export const getStaticPaths: GetStaticPaths<CategoryViewProps["params"]> =
+  async () => {
+    const { api } = await getSaleorApi();
+    const { data } = await exhaustList(
+      api.categories.getList({
+        first: staticPathsFetchBatch,
+      })
+    );
 
-  const paths = data.map(({ slug }) => ({
-    params: { slug },
-  }));
+    const paths = data.map(({ slug }) => ({
+      params: { slug },
+    }));
 
-  return { paths, fallback: staticPathsFallback };
-};
+    return { paths, fallback: staticPathsFallback };
+  };
 
 export const getStaticProps: GetStaticProps<
   CategoryViewProps,

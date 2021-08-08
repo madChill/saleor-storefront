@@ -19,8 +19,9 @@ export const useRedirectToCorrectCheckoutStep = (cartLoaded: boolean) => {
   );
 
   useEffect(() => {
-    const stepFromPath = CHECKOUT_STEPS.find(({ link }) => link === pathname)
-      ?.step;
+    const stepFromPath = CHECKOUT_STEPS.find(
+      ({ link }) => link === pathname
+    )?.step;
     const isShippingRequired = checkIfShippingRequiredForProducts(items);
     const isIncorrectStep =
       !stepFromPath ||

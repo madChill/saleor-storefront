@@ -35,11 +35,12 @@ export const ProductVariantAttributeSelect: React.FC<{
   defaultValue,
 }) => {
   const [showSelectSidebar, setShowSelectSidebar] = React.useState(false);
-  const selectableProductVariantsAttributeValues = useSelectableProductVariantsAttributeValues(
-    productVariantsAttributeId,
-    productVariants,
-    productVariantsAttributesSelectedValues
-  );
+  const selectableProductVariantsAttributeValues =
+    useSelectableProductVariantsAttributeValues(
+      productVariantsAttributeId,
+      productVariants,
+      productVariantsAttributesSelectedValues
+    );
   const intl = useIntl();
 
   const selectedAttribute =

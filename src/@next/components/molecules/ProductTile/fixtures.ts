@@ -74,12 +74,10 @@ export const PRODUCT: ProductList_products_edges_node = {
   thumbnail: {
     __typename: "Image",
     alt: "",
-    url:
-      "http://localhost:8000/media/__sized__/products/saleordemoproduct_fd_juice_06_102xcfi-thumbnail-255x255.png",
+    url: "http://localhost:8000/media/__sized__/products/saleordemoproduct_fd_juice_06_102xcfi-thumbnail-255x255.png",
   },
   thumbnail2x: {
     __typename: "Image",
-    url:
-      "http://localhost:8000/media/__sized__/products/saleordemoproduct_fd_juice_06_102xcfi-thumbnail-510x510.png",
+    url: "http://localhost:8000/media/__sized__/products/saleordemoproduct_fd_juice_06_102xcfi-thumbnail-510x510.png",
   },
 };

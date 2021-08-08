@@ -23,8 +23,10 @@ export const getBackgroundColor = (ref: any): string => {
     if (el.nodeName === "BODY") {
       return DEFAULT_BACKGROUND_COLOR;
     }
-    const bgColor = window.getComputedStyle(el.parentElement, null)
-      .backgroundColor;
+    const bgColor = window.getComputedStyle(
+      el.parentElement,
+      null
+    ).backgroundColor;
 
     if (bgColor && bgColor !== "rgba(0, 0, 0, 0)") {
       return bgColor;
